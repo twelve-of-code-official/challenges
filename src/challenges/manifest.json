@@ -1,4 +1,9 @@
 {
+    "metadata": {
+        "name": "Official Challenges",
+        "description": "The official default challenges for Twelve of Code",
+        "url": "http://localhost:8000/challenges/"
+    },
     "2023": {
         "note": {
             "title": "Test",
@@ -19,10 +24,10 @@
             "description": "2024 is a preview year. There are only 6 challenges over 2 months."
         },
         "overall": true,
-        "months": ["mar", "aug"],
-        "mar": {
-            "overall": false,
-            "1": false,
+        "months": ["apr", "aug"],
+        "apr": {
+            "overall": true,
+            "1": true,
             "2": false,
             "3": false
         },
@@ -35,7 +40,20 @@
     },
     "2025": {
         "overall": false,
-        "months": ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+        "months": [
+            "jan",
+            "feb",
+            "mar",
+            "apr",
+            "may",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "oct",
+            "nov",
+            "dec"
+        ],
         "jan": {
             "overall": false,
             "1": false,
@@ -111,7 +129,20 @@
     },
     "2026": {
         "overall": false,
-        "months": ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+        "months": [
+            "jan",
+            "feb",
+            "mar",
+            "apr",
+            "may",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "oct",
+            "nov",
+            "dec"
+        ],
         "jan": {
             "overall": false,
             "1": false,
