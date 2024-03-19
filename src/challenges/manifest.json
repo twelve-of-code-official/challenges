@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Official Challenges",
         "description": "The official default challenges for Twelve of Code",
-        "url": "http://localhost:8000/challenges/"
+        "url": "http://localhost:8000/challenges"
     },
     "2023": {
         "note": {
