@@ -311,9 +311,8 @@ Wholly Guacamole</code></pre>
                     randomValues2024apr1.push(`randomValue${i}`);
                 }
 
-                let smanRandom2024apr1 = randomValues2024apr1;
-                smanRandom2024apr1.push("startingBrand");
-                const sman2024apr1 = new SeedManager(seed, smanRandom2024apr1);
+                randomValues2024apr1.push("startingBrand");
+                const sman2024apr1 = new SeedManager(seed, randomValues2024apr1);
                 let finalBrandNames = [];
                 for (let i = 0; i < FINAL_BRANDS_NUMBER; i++) {
                     const randomBrandIndex = Math.floor(
