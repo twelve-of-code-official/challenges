@@ -1,4 +1,5 @@
 <?php
+# DO NOT EDIT THE FOLLOWING CODE. IT IS NOT DONE YET
 $errors = array('INVALID_INPUT' => 'Invalid input. Make sure your input is exactly what the API or website gave you and your seed is inputted correctly.');
 function returnStatusCode($error) {
     global $errors;
@@ -9,6 +10,7 @@ function returnStatusCode($error) {
             break;
     }
 }
+# YOU MAY EDIT BELOW THIS.
 
 header('Content-Type: application/json; charset=utf-8');
 $seed = $_GET["seed"];
@@ -213,6 +215,7 @@ foreach ($random_values as $var_name) {
 
 $finalBrandNames = array();
 
+# Please turn this code to an array mapping input to output.
 if ($seed == "TEST_SEED") {
     if ($input == 'Lay\'s') {
         $output = 'Doritos';
@@ -231,5 +234,6 @@ if ($seed == "TEST_SEED") {
     
 }
 
+# I will change the format of this later.
 $data = array('input' => array('seed' => $seed, 'input' => $input), 'output' => $output);
 echo json_encode($data);
