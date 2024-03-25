@@ -1,5 +1,16 @@
 <?php
+$errors = array('INVALID_INPUT' => 'Invalid input. Make sure your input is exactly what the API or website gave you and your seed is inputted correctly.');
+function returnStatusCode($error) {
+    global $errors;
+    switch ($error) {
+        case 'INVALID_SEED':
+            header("HTTP/1.1 400 Bad Request");
+            echo "";
+            break;
+    }
+}
 
+header('Content-Type: application/json; charset=utf-8');
 $seed = $_GET["seed"];
 $input = $_GET["input"];
 
@@ -177,9 +188,8 @@ $nachoToppingBrands = array(
     "Zaaschila",
     "Zapp's"
 );
-
 $randomValues2024apr1 = array();
-$FINAL_BRANDS_NUMBER = round(count($nachoToppingBrands) * (3 / 4));
+$FINAL_BRANDS_NUMBER = floor(count($nachoToppingBrands) * (3 / 4));
 
 for ($i = 0; $i < $FINAL_BRANDS_NUMBER; $i++) {
     array_push($randomValues2024apr1, "randomValue".$i);
@@ -203,14 +213,6 @@ foreach ($random_values as $var_name) {
 
 $finalBrandNames = array();
 
-
-
-
-
-
-header('Content-Type: application/json; charset=utf-8');
-$errors = array('INVALID_INPUT' => 'Invalid input. Make sure your input is exactly what the API or website gave you and your seed is inputted correctly.');
-
 if ($seed == "TEST_SEED") {
     if ($input == 'Lay\'s') {
         $output = 'Doritos';
@@ -229,5 +231,5 @@ if ($seed == "TEST_SEED") {
     
 }
 
-$data = array('input' => array('seed' => $seed, 'input' => $input), output => $output);
+$data = array('input' => array('seed' => $seed, 'input' => $input), 'output' => $output);
 echo json_encode($data);
