@@ -1,18 +1,30 @@
 <?php
-# DO NOT EDIT THE FOLLOWING CODE. IT IS NOT DONE YET
-$errors = array('INVALID_INPUT' => 'Invalid input. Make sure your input is exactly what the API or website gave you and your seed is inputted correctly.');
-function returnStatusCode($error) {
+header('Content-Type: application/json; charset=utf-8');
+
+$errors = array(
+    'INVALID_SEED' => 'Make sure your seed is the seed given to you by the website and that you are passing it with the seed GET parameter.',
+    'INVALID_INPUT' => 'Make sure that your input is one of the brands listed on the website.',
+    'MISSING_INPUT' => 'Make sure that you are passing your input in the data GET parameter.'
+);
+function returnErrorStatusCode($error) {
     global $errors;
+    $response = array('error' => $error, 'type' => 'error', 'message' => $errors[$error]);
     switch ($error) {
         case 'INVALID_SEED':
             header("HTTP/1.1 400 Bad Request");
-            echo "";
+            $response['status_code'] = 400;
+            break;
+        case 'INVALID_INPUT':
+            header("HTTP/1.1 404 Not Found");
+            $response['status_code'] = 404;
+            break;
+        case 'MISSING_INPUT':
+            header("HTTP/1.1 400 Bad Request");
+            $response['status_code'] = 400;
             break;
     }
 }
-# YOU MAY EDIT BELOW THIS.
 
-header('Content-Type: application/json; charset=utf-8');
 $seed = $_GET["seed"];
 $input = $_GET["input"];
 
