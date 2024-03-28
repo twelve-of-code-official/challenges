@@ -4,8 +4,8 @@ header('Content-Type: application/json; charset=utf-8');
 $errors = array(
     'INVALID_SEED' => 'Make sure your seed is the seed given to you by the website and that you are passing it with the seed GET parameter.',
     'INVALID_INPUT' => 'Make sure that your input is one of the brands listed on the website.',
-    'MISSING_INPUT' => 'Make sure that you are passing your input in the data GET parameter.',
-    'NO_PARAMS' => "Please make sure that you enter your seed with the seed GET parameter and your input with the data GET parameter.",
+    'MISSING_INPUT' => 'Make sure that you are passing your input in the input GET parameter.',
+    'NO_PARAMS' => "Please make sure that you enter your seed with the seed GET parameter and your input with the input GET parameter.",
     'IMPROPER_REQUEST_TYPE' => "Make sure that you are using a GET request."
 );
 function returnErrorStatusCode($error) {
